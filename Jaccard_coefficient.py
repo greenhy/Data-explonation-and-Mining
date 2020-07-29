@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[7]:
-
-
 #calculate the vocabulary
 
 d1 = "If you fail to plan then you plan to fail"
@@ -14,15 +11,9 @@ d1_l = d1.split()
 d2_l = d2.split()
 
 
-# In[8]:
-
-
 #list to set
 d1_s = set(d1_l)
 d2_s = set(d2_l)
-
-
-# In[9]:
 
 
 print(d1_l)
@@ -32,15 +23,9 @@ print(d1_s)
 print(d2_s)
 
 
-# In[10]:
-
-
 #combine d1_s and d2_s to make a vocabulary 
 voc = d1_s.union(d2_s)
 print(voc)
-
-
-# In[13]:
 
 
 #make a vector list for d1
@@ -54,8 +39,6 @@ for word in voc:
 print(d1_vec)
 
 
-# In[14]:
-
 
 #make a vector list for d2
 d2_vec=[]
@@ -67,8 +50,6 @@ for word in voc:
 
 print(d2_vec)
 
-
-# In[17]:
 
 
 #calculate the Jaccard coefficient between d1 and d2
@@ -89,9 +70,6 @@ print(s_inter)
 result = s_inter/s_union
 
 print(result)
-
-
-# In[ ]:
 
 
 
