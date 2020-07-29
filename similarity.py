@@ -1,17 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[13]:
-
-
 import math
 
 d1 = "If you fail to plan then you plan to fail"
 d2 = "do not fil me or else I will fail you"
 d3 = "I always organise well"
-
-
-# In[36]:
 
 
 # define cosine_similarity to calculate consine cimilarity
@@ -42,9 +36,6 @@ def cosine_similarity(vec1, vec2):
     
     
     return cosine
-
-
-# In[4]:
 
 
 def calculate_vocab(d1, d2, d3):
@@ -93,16 +84,10 @@ def calculate_vocab(d1, d2, d3):
     return [d1_vec, d2_vec, d3_vec]
 
 
-# In[10]:
-
-
 vec = calculate_vocab(d1,d2,d3)
 vec1 = vec[0]
 vec2 = vec[1]
 vec3 = vec[2]
-
-
-# In[15]:
 
 
 #define function for calculate euclidean similarity
@@ -117,27 +102,13 @@ def euclidean_similarity(vec1, vec2):
     return result  
     
 
-
-# In[16]:
-
-
 #Euclidean similarity between d1 and d2
 print(euclidean_similarity(vec1, vec2))
 #Eulidean similarity between d1 and d3
 print(euclidean_similarity(vec1, vec3))
 
 
-# In[37]:
-
-
 #cosine similarity between d1 and d2
 print(cosine_similarity(vec1, vec2))
 # cosine similarity between d1 and d3
-# print(cosine_similarity(vec1,vec3))
-
-
-# In[ ]:
-
-
-
-
+print(cosine_similarity(vec1,vec3))
