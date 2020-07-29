@@ -1,2 +1,2 @@
-# Data-explonation-and-Mining
+# Data-exploration-and-Mining
 class review
