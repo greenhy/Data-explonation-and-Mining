@@ -39,7 +39,6 @@ for word in voc:
 print(d1_vec)
 
 
-
 #make a vector list for d2
 d2_vec=[]
 for word in voc:
@@ -50,27 +49,28 @@ for word in voc:
 
 print(d2_vec)
 
-
-
 #calculate the Jaccard coefficient between d1 and d2
+# JC = |d1 AND d2| / | d1 OR d2|
 
 #calculate set union
 s_union = len(voc)
 
 #calculate set intersection
-s_inter=0
+s_and=0
 for i in range(s_union):
     if d1_vec[i] == d2_vec[i]:
-        s_inter+=1
+        s_and+=1
             
 print(s_union)
-print(s_inter)
+print(s_and)
 
+#| d1 OR d2|
+s_or=0
+for i in range(s_union):
+    if d1_vec[i] or d2_vec[i] == 1:
+        s_or += 1
+ 
 #divide s_union and s_inter
-result = s_inter/s_union
+result = s_and/s_or
 
 print(result)
-
-
-
-
