@@ -31,7 +31,7 @@ print(voc)
 #make a vector list for d1
 d1_vec=[]
 for word in voc:
-    if word in d1:
+    if word in d1_s:
         d1_vec.append(1)
     else:
         d1_vec.append(0)
@@ -42,7 +42,7 @@ print(d1_vec)
 #make a vector list for d2
 d2_vec=[]
 for word in voc:
-    if word in d2:
+    if word in d2_s:
         d2_vec.append(1)
     else:
         d2_vec.append(0)
