@@ -2,6 +2,7 @@
 # coding: utf-8
 
 import math
+import numpy as np
 
 d1 = "If you fail to plan then you plan to fail"
 d2 = "do not fil me or else I will fail you"
