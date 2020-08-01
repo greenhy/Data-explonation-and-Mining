@@ -9,32 +9,11 @@ d3 = "I always organise well"
 
 
 # define cosine_similarity to calculate consine cimilarity
-def cosine_similarity(vec1, vec2):
-#     assert (len(vec1) == len(vec2)), " The two vectors do not have the same length"
-#     cosine = 0
-    
-    mol=0
-    r1=0
-    r2=0
-    
-    for i in range(len(vec1)):
-        mol += (vec1[i]*vec2[i])
-    
-    
-    
-    for i in range(len(vec1)):
-        r1 += vec1[i]**2
-    for i in range(len(vec2)):
-        r2 += vec2[i]**2
-    
-    r1 = math.sqrt(r1)
-    r2 = math.sqrt(r2)
-    
-    den = r1*r2
-    
-    cosine = mol/den
-    
-    
+def cosine_similarity(vector1, vector2):
+    assert (len(vector1) == len(vector2)), " The two vectors do not have the same length"
+    #cosine = 0
+    cosine = np.inner(vector1, vector2) / (np.linalg.norm(vector1) * np.linalg.norm(vector2)
+
     return cosine
 
 
@@ -54,7 +33,7 @@ def calculate_vocab(d1, d2, d3):
     
     d1_vec=[]
     for word in voc:
-        if word in d1:
+        if word in d1_s:
             d1_vec.append(1)
         else:
             d1_vec.append(0)
@@ -64,7 +43,7 @@ def calculate_vocab(d1, d2, d3):
     #make a vector list for d2
     d2_vec=[]
     for word in voc:
-        if word in d2:
+        if word in d2_s:
             d2_vec.append(1)
         else:
             d2_vec.append(0)
@@ -74,7 +53,7 @@ def calculate_vocab(d1, d2, d3):
     #make a vector list for d3
     d3_vec=[]
     for word in voc:
-        if word in d3:
+        if word in d3_s:
             d3_vec.append(1)
         else:
             d3_vec.append(0)
@@ -90,25 +69,30 @@ vec2 = vec[1]
 vec3 = vec[2]
 
 
-#define function for calculate euclidean similarity
-def euclidean_similarity(vec1, vec2):
+#define function for calculate euclidean similarity 
+# def euclidean_similarity(vec1, vec2):
     
-    sum=0
-    for i in range(len(vec1)):
-        sum += (vec1[i]-vec2[i])**2
+#     sum=0
+#     for i in range(len(vec1)):
+#         sum += (vec1[i]-vec2[i])**2
     
-    result = math.sqrt(sum)
+#     result = math.sqrt(sum)
     
-    return result  
+#     return result  
     
+Euclidean_dist_d1d2 = np.linalg.norm(np.array(vec1)-np.array(vec2))
+Euclidean_dist_d1d3 = np.linalg.norm(np.array(vec1)-np.array(vec3))
 
-#Euclidean similarity between d1 and d2
-print(euclidean_similarity(vec1, vec2))
-#Eulidean similarity between d1 and d3
-print(euclidean_similarity(vec1, vec3))
-
+# #Euclidean similarity between d1 and d2
+print(Euclidean_dist_d1d2)
+# #Eulidean similarity between d1 and d3
+print(Euclidean_dist_d1d3)
 
 #cosine similarity between d1 and d2
 print(cosine_similarity(vec1, vec2))
 # cosine similarity between d1 and d3
 print(cosine_similarity(vec1,vec3))
+
+
+
+
